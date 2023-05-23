@@ -14,7 +14,7 @@ The script will scrape the creators `/posts` page and dump the information into 
 
 `creator` will be replaced by the command line argument passed to the script. If multiple arguments were specified, multiple files will be created.
 
-You should automate this using the Windows Task Scheduler (Windows) or Cron (Linux).
+You should automate this using a task scheduler of your choice, e.g. Windows Task Scheduler (Windows), Cron (Linux), etc.
 
 ## RSS Guard Usage
 
