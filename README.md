@@ -1,10 +1,10 @@
 # patreon-2-rss 
 
-Scrapes patreon.com using puppeteer and converts posts into a RSS feed which can be imported into readers such as RSS Guard (https://github.com/martinrotter/rssguard/).
+Scrapes patreon.com using puppeteer and converts posts into a RSS feed which can be imported into readers such as [RSS Guard](https://github.com/martinrotter/rssguard/).
 
 ## Requirements
 
-- Node.js (https://nodejs.org/en)
+- [Node.js](https://nodejs.org/en)
 
 ## Usage
 
@@ -18,7 +18,7 @@ The script will scrape the creators `/posts` page and dump the information into 
 
 Specify which creator you want to import, by replacing `creator` in `creator.xml` according to the file the script generated.
 
-I recommend symlinking the folder to which you cloned this repo (e.g. `patreon-2-rss`) to a `scripts` folder in the RSS Guard `%data%` directory, which you will have to create yourself.
+I recommend symlinking the folder to which you cloned this repo (e.g. `patreon-2-rss`) to a `scripts` folder in the RSS Guard [%data%](https://github.com/martinrotter/rssguard/blob/master/resources/docs/Documentation.md#userd) directory, which you will have to create yourself.
 
 - On Windows: `powershell "cat '%data%\scripts\patreon-2-rss\creator.xml'"`
 
