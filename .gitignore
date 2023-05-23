@@ -1,0 +1,5 @@
+# Dependency directories
+node_modules/
+
+# RSS feeds of .xml file type
+*.xml
