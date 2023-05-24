@@ -8,7 +8,9 @@ Scrapes patreon.com using puppeteer and converts posts into a RSS feed which can
 
 ## Usage
 
-`node scraper.js creator [creator]`
+1. `npm install`
+
+2. `node scraper.js creator [creator]`
 
 The script will scrape the creators `/posts` page and dump the information into a `creator.xml` file in RSS 2.0 format. 
 
