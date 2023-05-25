@@ -32,6 +32,6 @@ There are two ways of using the script for RSS Guard:
 
 <br/><br/>
 
-*1 **Do this if you have a FEW creators you want to check on.** Specify which creator you want to import, by replacing `creator` in `creator.xml` according to the file the script generated. Use a Task scheduler of your choice, e.g. Windows Task Scheduler (Windows), Cron (Linux), etc. 
+*1 **Do this if you have MANY creators you want to check on.** Specify which creator you want to import, by replacing `creator` in `creator.xml` according to the file the script generated. Use a Task scheduler of your choice, e.g. Windows Task Scheduler (Windows), Cron (Linux), etc. 
 
-*2 **Do this if you have MANY creators you want to check on.** I do not recommend this if you have lots of creators you want to check on, since the script is creating a browser instance for each feed/creator and it may take a long time for the whole process to finish.
+*2 **Do this if you have a FEW creators you want to check on.** I do not recommend this if you have lots of creators you want to check on, since the script is creating a browser instance for each feed/creator and it may take a long time for the whole process to finish.
