@@ -1,6 +1,4 @@
-const fs = require('fs');
-
-function convertToRss(creator, posts) {
+function convertToFeed(creator, posts) {
   // Create an RSS feed object
   const rssFeed = {
     title: `${creator}'s Patreon feed`,
@@ -26,14 +24,7 @@ function convertToRss(creator, posts) {
     </channel>
   </rss>`;
   
-  // Write the XML to a file
-  fs.writeFile(`${creator}.xml`, xml, err => {
-    if (err) {
-      console.error('Error writing RSS feed:', err);
-    } else {
-      console.log('RSS feed written successfully!');
-    }
-  });
+  return xml;
 }
 
-module.exports = convertToRss;
+module.exports = convertToFeed;

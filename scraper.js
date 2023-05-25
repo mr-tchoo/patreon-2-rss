@@ -1,17 +1,13 @@
 const puppeteer = require('puppeteer');
+const parseArgs = require('./argParser');
 const parseDateTime = require('./dateParser');
-const convertToRss = require('./rssConverter');
+const convertToFeed = require('./feedConverter');
 const sanitizeTitle = require('./titleSanitizer');
+const outputFeed = require('./outputHandler');
 
 const creatorUrl = 'https://www.patreon.com/{creator}/posts';
-const customArgs = process.argv.slice(2);
 
-if (customArgs.length == 0) {
-  console.log("Please pass creators as command line arguments: node scraper.js creator ...");
-  process.exit(0); 
-}
-
-async function scrapePatreonPosts() {
+async function scrapePatreonPosts(creators, options) {
 
   // Launch puppeteer (in Chrome's new headless mode)
   const browser = await puppeteer.launch({
@@ -26,7 +22,7 @@ async function scrapePatreonPosts() {
     'Accept-Language': 'en'
   });
 
-  for (const creator of customArgs) {
+  for (const creator of creators) {
 
     // Navigate to the creators post page
     await page.goto(creatorUrl.replace("{creator}", creator), { waitUntil: 'networkidle0' });
@@ -48,11 +44,15 @@ async function scrapePatreonPosts() {
     }));
 
     // Convert data to RSS feed in XML
-    convertToRss(creator, postsData);
+    feed = convertToFeed(creator, postsData);
+
+    // Output feed
+    outputFeed(creator, feed, options['output-type'])
   }
 
   // Close browser
   await browser.close();
 }
 
-scrapePatreonPosts();
+[creators, options] = parseArgs();
+scrapePatreonPosts(creators, options);
