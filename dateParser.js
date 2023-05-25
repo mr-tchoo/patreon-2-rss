@@ -97,7 +97,7 @@ function main(dateTimeString) {
     const parsedDateTime = parseDateTime(dateTimeString);
     const formattedDateTime = formatDateTime(parsedDateTime);
     
-    console.log(`Parsed: ${dateTimeString} to ${formattedDateTime}`);
+    // console.log(`Parsed: ${dateTimeString} to ${formattedDateTime}`);
     return formattedDateTime;
 }
 
