@@ -10,7 +10,7 @@ Scrapes patreon.com creators using puppeteer and converts posts into a RSS feed 
 
 1. `npm install`
 
-2. `node scraper.js creator [creator] [output-type=xml,stdout]`
+2. `node scraper creator [creator] [output-type=xml,stdout]`
 
 The script will scrape the creators `/posts` page and dump the information into a `creator.xml` file in RSS 2.0 format. 
 
@@ -24,11 +24,11 @@ There are two ways of using the script for RSS Guard:
 
 1. **Generate and import .xml files** *1
     - On Windows: 
-        1. `node '%data%\scripts\patreon-2-rss\scraper.js' creator [creator]` (Task scheduler) 
+        1. `node '%data%\scripts\patreon-2-rss\scraper' creator [creator]` (Task scheduler) 
         2. `powershell "cat '%data%\scripts\patreon-2-rss\creator.xml'"` (RSS Guard)
 <br/><br/>
 2. **Use script output** *2
-    - On Windows: `powershell "node '%data%\scripts\patreon-2-rss\scraper.js creator --output-type=stdout'"` (RSS Guard)
+    - On Windows: `node "%data%\scripts\patreon-2-rss\scraper" creator --output-type=stdout` (RSS Guard)
 
 <br/><br/>
 
